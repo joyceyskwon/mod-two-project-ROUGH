@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_25_012953) do
+ActiveRecord::Schema.define(version: 2018_12_27_045919) do
 
   create_table "companies", force: :cascade do |t|
     t.string "name"
     t.string "address"
-    t.float "latitube"
-    t.float "longitude"
+    t.decimal "latitude"
+    t.decimal "longitude"
     t.integer "num_of_employees"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -36,16 +36,22 @@ ActiveRecord::Schema.define(version: 2018_12_25_012953) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "reservations", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "restaurant_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "restaurants", force: :cascade do |t|
     t.string "name"
     t.string "address"
-    t.float "latitude"
-    t.float "longitude"
-    t.integer "phone"
-    t.string "website"
-    t.integer "price_range"
-    t.float "rating"
+    t.decimal "latitude"
+    t.decimal "longitude"
     t.string "category"
+    t.integer "price_range"
+    t.string "phone"
+    t.string "website"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

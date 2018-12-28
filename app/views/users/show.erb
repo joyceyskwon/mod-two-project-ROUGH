@@ -1,0 +1,9 @@
+<h3>Profile</h3>
+
+<h3>Name: <%= @user.name %></h3>
+<p>Email: <%= @user.email %></p>
+<p><%= link_to "Change email", edit_user_path %></p>
+<p>Password: ********</p>
+<p><%= link_to "Change password", edit_user_path %></p>
+<p>Company: <%= @user.company.name %></p>
+<p><%= link_to "Change company", edit_user_path %></p>
